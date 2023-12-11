@@ -6,7 +6,7 @@ export const ControlContainer = styled.div`
 	gap: 0.5rem;
 	margin-bottom: 1.5rem;
 `;
-export const Label = styled.label`
+const Label = styled.label`
 	display: block;
 	margin-bottom: 0.5rem;
 	font-size: 0.75rem;
@@ -15,7 +15,7 @@ export const Label = styled.label`
 	text-transform: uppercase;
 	color: ${({ invalid }) => (invalid ? '#f87171' : '#c1cbde ')};
 `;
-export const Input = styled.input`
+const Input = styled.input`
 	width: 100%;
 	padding: 0.75rem 1rem;
 	line-height: 1.5;
@@ -25,6 +25,18 @@ export const Input = styled.input`
 	border-radius: 0.25rem;
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 `;
+
+export function CustomInput({ label, invalid, ...props }) {
+	return (
+		<p>
+			<Label $invalid={invalid}>{label}</Label>
+			<Input
+				$invalid={invalid}
+				{...props}
+			/>
+		</p>
+	);
+}
 
 export const SolidButton = styled.button`
 	padding: 1rem 2rem;

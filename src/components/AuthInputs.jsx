@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import {
 	ControlContainer,
-	Input,
 	SolidButton,
 	TextButton,
-	Label,
+	CustomInput,
 } from './auth-inputs.styles';
 
 export default function AuthInputs() {
@@ -30,24 +29,21 @@ export default function AuthInputs() {
 	return (
 		<div id="auth-inputs">
 			<ControlContainer>
-				<p>
-					<Label invalid={emailNotValid}>Email</Label>
-					<Input
-						type="email"
-						invalid={emailNotValid}
-						onChange={(event) => handleInputChange('email', event.target.value)}
-					/>
-				</p>
-				<p>
-					<Label invalid={passwordNotValid}>Password</Label>
-					<Input
-						type="password"
-						invalid={passwordNotValid}
-						onChange={(event) =>
-							handleInputChange('password', event.target.value)
-						}
-					/>
-				</p>
+				<CustomInput
+					label={'Email'}
+					type="email"
+					invalid={emailNotValid}
+					onChange={(event) => handleInputChange('email', event.target.value)}
+				/>
+
+				<CustomInput
+					label={'Password'}
+					type="password"
+					invalid={passwordNotValid}
+					onChange={(event) =>
+						handleInputChange('password', event.target.value)
+					}
+				/>
 			</ControlContainer>
 			<div className="actions">
 				<TextButton type="button">Create a new account</TextButton>
