@@ -1,10 +1,5 @@
 import { useState } from 'react';
-import {
-	ControlContainer,
-	SolidButton,
-	TextButton,
-	CustomInput,
-} from './auth-inputs.styles';
+import { SolidButton, CustomInput } from './auth-inputs.styles';
 
 export default function AuthInputs() {
 	const [enteredEmail, setEnteredEmail] = useState('');
@@ -27,8 +22,10 @@ export default function AuthInputs() {
 	const passwordNotValid = submitted && enteredPassword.trim().length < 6;
 
 	return (
-		<div id="auth-inputs">
-			<ControlContainer>
+		<div
+			id="auth-inputs"
+			className="w-full max-w-md p-8 rounded mx-auto shadow-md bg-gradient-to-b from-blue-900 to-blue-700">
+			<div className="flex flex-col gap-2 mb-6">
 				<CustomInput
 					label={'Email'}
 					type="email"
@@ -44,10 +41,18 @@ export default function AuthInputs() {
 						handleInputChange('password', event.target.value)
 					}
 				/>
-			</ControlContainer>
-			<div className="actions">
-				<TextButton type="button">Create a new account</TextButton>
-				<SolidButton onClick={handleLogin}>Sign In</SolidButton>
+			</div>
+			<div className="flex justify-end gap-4">
+				<button
+					type="button"
+					className="text-white hover:text-cyan-300">
+					Create a new account
+				</button>
+				<SolidButton
+					className="bg-indigo-500"
+					onClick={handleLogin}>
+					Sign In
+				</SolidButton>
 			</div>
 		</div>
 	);
