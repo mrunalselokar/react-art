@@ -50,16 +50,8 @@ export default function AuthInputs() {
 				</p>
 			</ControlContainer>
 			<div className="actions">
-				<TextButton
-					type="button"
-					className="text-button">
-					Create a new account
-				</TextButton>
-				<SolidButton
-					className="button"
-					onClick={handleLogin}>
-					Sign In
-				</SolidButton>
+				<TextButton type="button">Create a new account</TextButton>
+				<SolidButton onClick={handleLogin}>Sign In</SolidButton>
 			</div>
 		</div>
 	);
