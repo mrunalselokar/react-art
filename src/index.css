@@ -80,17 +80,6 @@ button:focus {
 	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#133D4C", endColorstr="#267b9a", GradientType=1 );
 	color: white;
 }
-
-label.invalid {
-	color: #f87171;
-}
-
-input.invalid {
-	color: #ef4444;
-	border-color: #f73f3f;
-	background-color: #fed2d2;
-}
-
 .actions {
 	display: flex;
 	justify-content: flex-end;
