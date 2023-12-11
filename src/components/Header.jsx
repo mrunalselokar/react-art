@@ -1,14 +1,14 @@
 import logo from '../assets/logo.png';
-import './header.css';
+import { StyledHeader } from './header.styles';
 export default function Header() {
 	return (
-		<header>
+		<StyledHeader>
 			<img
 				src={logo}
 				alt="A canvas"
 			/>
 			<h1>ReactArt</h1>
 			<p>A community of artists and art-lovers.</p>
-		</header>
+		</StyledHeader>
 	);
 }
